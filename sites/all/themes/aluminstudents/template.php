@@ -68,7 +68,7 @@ function aluminstudents_preprocess_page(&$vars) {
     $vars['primary_nav'] = theme('links__system_main_menu', array(
       'links' => $vars['main_menu'],
       'attributes' => array(
-        'class' => array('list-inline', 'inline', 'main-menu'),
+        'class' => array('list-inline', 'main-menu'),
       ),
       'heading' => array(
         'text' => t('Main menu'),
@@ -84,7 +84,7 @@ function aluminstudents_preprocess_page(&$vars) {
     $vars['secondary_nav'] = theme('links__system_secondary_menu', array(
       'links' => $vars['secondary_menu'],
       'attributes' => array(
-        'class' => array('list-inline', 'inline', 'secondary-menu'),
+        'class' => array('list-inline', 'secondary-menu'),
       ),
       'heading' => array(
         'text' => t('Secondary menu'),

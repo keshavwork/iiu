@@ -20,19 +20,19 @@
         <div class="col-md-4">
         <?php if ($logo || $site_title): ?>
           <?php if ($title): ?>
-            <div id="branding"><strong><a href="<?php print $front_page ?>">
+            <strong><a href="<?php print $front_page ?>">
             <?php if ($logo): ?>
-              <img src="<?php print $logo ?>" alt="<?php print $site_name_and_slogan ?>" title="<?php print $site_name_and_slogan ?>" id="logo" />
+              <img src="<?php print $logo ?>" class="img-responsive" alt="<?php print $site_name_and_slogan ?>" title="<?php print $site_name_and_slogan ?>" id="logo" />
             <?php endif; ?>
             <?php //print $site_html ?>
-            </a></strong></div>
+            </a></strong>
           <?php else: /* Use h1 when the content title is empty */ ?>
-            <h1 id="branding"><a href="<?php print $front_page ?>">
+            <a href="<?php print $front_page ?>">
             <?php if ($logo): ?>
-              <img src="<?php print $logo ?>" alt="<?php print $site_name_and_slogan ?>" title="<?php print $site_name_and_slogan ?>" id="logo" />
+              <img src="<?php print $logo ?>" class="img-responsive" alt="<?php print $site_name_and_slogan ?>" title="<?php print $site_name_and_slogan ?>" id="logo" />
             <?php endif; ?>
             <?php //print $site_html ?>
-            </a></h1>
+            </a>
         <?php endif; ?>
         <?php endif; ?>
 		<?php //$form = drupal_get_form('search_block_form', TRUE); ?>

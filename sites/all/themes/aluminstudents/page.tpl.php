@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="<?php print $base_path;?>/sites/default/css/bootstrap.min.css">
+<link rel="stylesheet" href="<?php print $base_path;?>/sites/default/css/bootstrap.css">
 <!-- Optional theme -->
 <link rel="stylesheet" href="<?php print $base_path;?>/sites/default/css/bootstrap-theme.min.css">
 <!-- Latest compiled and minified JavaScript -->
@@ -20,19 +20,19 @@
         <div class="col-md-4">
         <?php if ($logo || $site_title): ?>
           <?php if ($title): ?>
-            <div id="branding"><strong><a href="<?php print $front_page ?>">
+            <strong><a href="<?php print $front_page ?>">
             <?php if ($logo): ?>
-              <img src="<?php print $logo ?>" alt="<?php print $site_name_and_slogan ?>" title="<?php print $site_name_and_slogan ?>" id="logo" />
+              <img src="<?php print $logo ?>" class="img-responsive" alt="<?php print $site_name_and_slogan ?>" title="<?php print $site_name_and_slogan ?>" id="logo" />
             <?php endif; ?>
             <?php //print $site_html ?>
-            </a></strong></div>
+            </a></strong>
           <?php else: /* Use h1 when the content title is empty */ ?>
-            <h1 id="branding"><a href="<?php print $front_page ?>">
+            <a href="<?php print $front_page ?>">
             <?php if ($logo): ?>
-              <img src="<?php print $logo ?>" alt="<?php print $site_name_and_slogan ?>" title="<?php print $site_name_and_slogan ?>" id="logo" />
+              <img src="<?php print $logo ?>" class="img-responsive" alt="<?php print $site_name_and_slogan ?>" title="<?php print $site_name_and_slogan ?>" id="logo" />
             <?php endif; ?>
             <?php //print $site_html ?>
-            </a></h1>
+            </a>
         <?php endif; ?>
         <?php endif; ?>
 		<?php //$form = drupal_get_form('search_block_form', TRUE); ?>
@@ -115,13 +115,11 @@
 <footer>
   <div class="footer-nav">
     <div class="container footer-top">
-      <div class="col-md-6">
-	        <ul class="list-inline">
-          <li><a href="#">IIUm Website</a></li>
-          <li><a href="#">ACSD Website</a></li>
-          <li><a href="#">MOF Website</a></li>
-          <li><a href="#">NCS Website</a></li>
-        </ul>
+      <div class="col-md-6 list-inline">
+        <?php
+$menu = menu_navigation_links('menu-bannermenu');
+print theme('links__menu-bannermenu', array('links' => $menu));
+?>
       </div>
       <div class="col-md-6 text-right">
         <ul class="list-inline socail">
@@ -137,14 +135,11 @@
     <div class="row footer-btm" style="margin-bottom:0; padding-top:40px;">
       <div class="container">
         <div class="col-md-6"> Copyright © International Islamic University Malaysia. All rights reserved. </div>
-        <div class="col-md-6 text-right">
-          <ul class="list-inline">
-            <li><a href="#">About us</a></li>
-            <li><a href="#">faq's</a></li>
-            <li><a href="#">contact us</a></li>
-            <li><a href="#">send feedback</a></li>
-            <li><a href="#">site map</a></li>
-          </ul>
+        <div class="col-md-6 list-inline text-right">
+           <?php
+$menu = menu_navigation_links('menu-footer');
+print theme('links__menu-footer', array('links' => $menu));
+?>
         </div>
       </div>
     </div>
