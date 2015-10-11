@@ -9,14 +9,13 @@
 <script src="<?php print $base_path;?>/sites/default/js/bootstrap.min.js"></script>
 <script src="<?php print $base_path;?>/sites/default/js/limit.js"></script>
 <script src="<?php print $base_path;?>/sites/default/js/zA7n.js"></script>
-
 <?php
 ?>
 <?php print render($page['header']); ?>
 
 <header>
     <div class="container">
-        <div class="row">
+        <div>
             <div class="col-md-4">
                 <?php if ($logo || $site_title): ?>
                     <?php if ($title): ?>
@@ -38,14 +37,8 @@
                 <?php //$form = drupal_get_form('search_block_form', TRUE); ?>
                 <?php print render($form); ?>
             </div>
-
             <?php //if ($primary_nav): print $primary_nav; endif; ?>
             <?php //if ($secondary_nav): print $secondary_nav; endif; ?>
-
-            <!-- <div id="breadcrumb-box">-->
-            <?php //print $breadcrumb; ?>
-            <!--</div>-->
-
 
             <div class="col-md-8 text-right">
                 <ul class="list-inline">
@@ -69,40 +62,30 @@
         </div>
     </div>
 </header>
-<menu class="text-center">
-    <?php if ($primary_nav): print $primary_nav; endif; ?>
-    <!--<ul class="list-inline">
+<div class="page-title text-left" style="text-align:left !important;">
+    <div class="container"><h2>ALUMNI Registration</h2>
+        Read Latest Updates ABOUT Announcements, events and News</div>
+</div>
 
-      <li class="menu-bor"></li>
-      <li><a href="#">Upcoming events</a></li>
-      <li class="menu-bor"></li>
-      <li class="active"><a href="#">Alumni connections</a></li>
-      <li class="menu-bor"></li>
-      <li><a href="#">get involved</a></li>
-      <li class="menu-bor"></li>
-      <li><a href="#">fund raising </a></li>
-      <li class="menu-bor"></li>
-    </ul>-->
-</menu>
-<div class="slider">
-    <div class="accordion" id="zA7n">
-        <ul class="accordion__ul">
-            <li class="accordion__li"><img class="accordion__img" src="<?php print $base_path;?>/sites/default/images/s1.jpg" alt="Image Alt" /></li>
-            <li class="accordion__li"><img class="accordion__img" src="<?php print $base_path;?>/sites/default/images/s2.jpg" alt="Image Alt" /></li>
-            <li class="accordion__li" style="width:600px;"><img class="accordion__img" src="<?php print $base_path;?>/sites/default/images/s3.jpg" alt="Image Alt" />
-                <div class="silder-caption">
-                    <h2>TOGETHER</h2>
-                    <h3>Great <br>
-                        becomes Greatness</h3>
-                </div>
-            </li>
-            <li class="accordion__li"><img class="accordion__img" src="<?php print $base_path;?>/sites/default/images/s4.jpg" alt="Image Alt" /></li>
-            <li class="accordion__li"><img class="accordion__img" src="<?php print $base_path;?>/sites/default/images/s5.jpg" alt="Image Alt" /></li>
-        </ul>
+<div class="profile-section" style="background-image:url(<?php print $base_path;?>/sites/default/images/register.jpg); background-repeat:no-repeat; background-position:right top; background-size:35% 100%;">
+    <div class="container">
+
+        <div class="col-md-8">
+            <div class="col-md-12  uplo-conten">
+            <?php print $messages; ?>
+            <?php print drupal_render(drupal_get_form('user_register_form')); ?>
+        </div>
+        </div>
+
+        <div class="col-md-4">
+
+        </div>
+        </form>
     </div>
 </div>
-<div class="article text-center">
-    <div class="article-section text-center" style=""> <img src="<?php print $base_path;?>/sites/default/images/portal.png" class="img-responsive" style="margin:0 auto;"> </div>
+
+
+
 </div>
 <footer>
     <div class="footer-nav">
@@ -157,11 +140,7 @@
 
 </script>
 
-<script>
-    $(window).load(function () {
-        $('#zA7n').zA7n({});
-    });
-</script>
+
 
 <?php // print $feed_icons ?>
 </div><!-- /#squeeze, /#center -->
