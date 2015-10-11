@@ -16,7 +16,7 @@
 
 <header>
     <div class="container">
-        <div class="row">
+        <div>
             <div class="col-md-4">
                 <?php if ($logo || $site_title): ?>
                     <?php if ($title): ?>
