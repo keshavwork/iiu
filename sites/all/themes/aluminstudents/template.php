@@ -172,5 +172,22 @@ function aluminstudents_form_alter(&$form, &$form_state, $form_id) {
     $form['search_block_form']['#attributes']['onblur'] = "if (this.value == '') {this.value = 'Search';}";
     $form['search_block_form']['#attributes']['onfocus'] = "if (this.value == 'Search') {this.value = '';}";
   }
+  if ( TRUE === in_array( $form_id, array( 'user_login', 'user_login_block') ) ){
+	$form['name']['#attributes']['placeholder'] = t( 'Username' );
+	$form['pass']['#attributes']['placeholder'] = t( 'Password' );
+ }
+
+ 
+     if ($form_id == 'user_register_form') {
+	$form['account']['name']['#attributes']['placeholder'] = t( 'Username' );
+	$form['account']['mail']['#attributes']['placeholder'] = t( 'Email' ); 
+	$form['field_full_name']['und']['0']['value']['#attributes']['placeholder'] = t( 'Full Name' );
+	$form['field_year_of_graduation']['und']['0']['value']['#attributes']['placeholder'] = t( 'Year Of Graduation' );
+	$form['field_matric_no_']['und']['0']['value']['#attributes']['placeholder'] = t( 'Matric No.' );
+	$form['field_programme']['und']['0']['value']['#attributes']['placeholder'] = t( 'Programme' );
+	$form['field_kulliyah']['und']['0']['value']['#attributes']['placeholder'] = t( 'Kulliyah' ); 
+
+	
+ }
 }
 ?>

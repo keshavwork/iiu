@@ -71,7 +71,7 @@
     <div class="container">
 
         <div class="col-md-8">
-            <div class="col-md-12  uplo-conten">
+            <div class="col-md-12 registerUser">
             <?php print $messages; ?>
             <?php print drupal_render(drupal_get_form('user_register_form')); ?>
         </div>
