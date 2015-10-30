@@ -73,7 +73,8 @@
         <div class="col-md-8">
             <div class="col-md-12 registerUser">
             <?php print $messages; ?>
-            <?php print drupal_render(drupal_get_form('user_register_form')); ?>
+            <?php $form = drupal_get_form('user_register_form');
+		print drupal_render($form); //print drupal_render(drupal_get_form('user_register_form')); ?>
         </div>
         </div>
 

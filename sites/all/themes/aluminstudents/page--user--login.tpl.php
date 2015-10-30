@@ -89,8 +89,10 @@ events and News</h5>
 <p>Quisque ut cursus velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis sem ligula, id pellentesque dui feugiat sed. Nunc ut malesuada est</p>
     </div>
     <div class="col-md-4 col-sm-6">
-        <?php print $messages; ?>
-        <?php print drupal_render(drupal_get_form('user_login')); ?>
+        <?php   if (!$user->uid) { print $messages; ?>
+        <?php 
+		$form = drupal_get_form('user_login');
+		print drupal_render($form); } ?>
         <div class="for-get-password">Don't have an account yet? <a href="<?php print $base_path;?>user/register/">Register</a></div>
     </div>
 
