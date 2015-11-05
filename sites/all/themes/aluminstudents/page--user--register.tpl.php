@@ -10,6 +10,7 @@
 <script src="<?php print $base_path;?>/sites/default/js/limit.js"></script>
 <script src="<?php print $base_path;?>/sites/default/js/zA7n.js"></script>
 <?php
+error_reporting(0);
 ?>
 <?php print render($page['header']); ?>
 
@@ -42,8 +43,22 @@
 
             <div class="col-md-8 text-right">
                 <ul class="list-inline">
-                    <li><a class="btn btn-default">UPDATE PROFILE</a></li>
-                    <li><a href="<?php print $base_path;?>user/login/" class="btn btn-primary">UPDATE SIGN</a> </li>
+                    <?php
+					$user=user_load(arg(1));
+					$username=$user->name;
+					if($username){
+					?>
+                    <li style="padding-top:8px; text-transform: uppercase; font-size:bold;">WELCOME BACK! <?php print strtolower(preg_replace('/[^a-zA-Z0-9\-]/si' , '-' , $username)); ?> </li>
+					<li><a href="<?php print $base_path;?>user" class="btn btn-default">MY PROFILE</a></li>
+                    <li><a href="<?php print $base_path;?>user/logout/" class="btn btn-primary">LOGOUT</a> </li>
+					<?php 
+					}else{
+					?>
+					
+                    <li><a href="<?php print $base_path;?>user/login/" class="btn btn-primary">SIGN IN/REGISTER</a> </li>
+					<?php 
+					}
+					?>
                     <li>
                         <div class="sidebar">
                             <div class="mini-submenu" style="display:block;"><i class="fa fa-search"></i> </div>
